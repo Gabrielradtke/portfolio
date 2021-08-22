@@ -1,0 +1,367 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #fff;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto 0 auto;
+}
+
+
+section {
+    padding: 140rem;
+}
+
+/* -------------------------------------------- */
+/*                SECTION HEADER                */
+/* -------------------------------------------- */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+        url(/imagens/fundo.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.hero-text-box {
+    position: absolute;
+    max-width: 1140px;
+    top: 45%;
+    left: 8%;
+    animation-name: hero-text-box;
+    animation-duration: 4s;
+}
+
+@keyframes hero-text-box {
+    from {
+        margin-left: -150%
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
+
+.hero-img-box {
+    position: absolute;
+    max-width: 1140px;
+    top: 25%;
+    left: 62%;
+    animation-name: hero-text-box;
+    animation-duration: 4s;
+}
+
+.hero-img-box img {
+    border-radius: 50%;
+    opacity: 0.9;
+    max-width: 380px;
+    max-height: 380px;
+    border-radius: 50%;
+    border: solid 1px;
+}
+
+.hero-img-box img:hover {
+    border: solid 2px #ff0044;
+    transition: 400ms;
+}
+
+header h2 {
+    margin: 0 0 20 0;
+    color: #fff;
+    font-size: 240%;
+    font-weight: 500;
+}
+
+header p {
+    margin: 0 0 5 0;
+    padding: 0;
+    color: #fff;
+    font-size: 90%;
+    font-weight: 300;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+}
+
+/* ------------------------- */
+/* LOGO AND NAVIGATION............ */
+/* Main Navigation -----*/
+
+.logo {
+    float: left;
+    padding: 0;
+    margin: 20px 0px 0px 0px;
+}
+
+
+.logo-text a {
+    color: #fff;
+    text-align-last: justify;
+    margin: 0 0 0 5px;
+    text-decoration: none;
+}
+
+.logo-text h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px 0 0 30px;
+    color: #fff;
+    font-size: 150%;
+    font-weight: 500;
+    letter-spacing: -1px;
+    word-spacing: -4px;
+}
+
+.main-nav {
+    float: right;
+    /* margin-left: 2s00px; */
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+    font-weight: 500;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 8px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 80%;
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 2px solid transparent;
+    transition: border-top 0.9s;
+    transition: border-rigth 0.9s;
+    transition: border-bottom 0.9s;
+
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #ff0044;
+    border-right: 2px solid #ff0044;
+    border-top: 2px solid #ff0044;
+}
+
+/* -------------------------------------------- */
+/*               SECTION FEACTURES              */
+/* -------------------------------------------- */
+
+.section-group p {
+    font-family: 'Courier New', Courier, monospace;
+    color: #000;
+    word-spacing: -1px;
+
+}
+
+.section-features {
+    padding: 15px 0px;
+}
+
+.section-features-title {
+    margin: 110px;
+}
+
+.section-group {
+    display: flex;
+    margin: 20px;
+}
+
+
+.section-features-title h2 {
+    text-align: center;
+    color: #000;
+    font-size: 180%;
+    font-weight: 700;
+    letter-spacing: 1px;
+    word-spacing: -2px;
+}
+
+.section-features-title h2:after {
+    content: " ";
+    display: block;
+    height: 2px;
+    background-color: #ff0044;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.section-features-title p {
+    margin-top: 20px;
+    text-align: center;
+    color: #000;
+    font-size: 100%;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.box .big-icon {
+    font-size: 300%;
+    display: block;
+    color: #ff0044;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.box h3 {
+    text-align: center;
+    color: #000;
+    font-size: 140%;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.box p {
+    padding: 0 40px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 80%;
+    font-weight: 200;
+    line-height: 145%;
+    word-spacing: 1px;
+}
+
+
+/*<!--------------------------------------------------->
+  <!--                  SECTION FORM                 -->
+  <!--------------------------------------------------->*/
+
+.section-form {
+    padding: 90px 0;
+}
+
+.section-form h2 {
+    text-align: center;
+    color: #000;
+    font-size: 160%;
+    font-weight: 700;
+    letter-spacing: 1px;
+    word-spacing: -2px;
+}
+
+
+
+.section-form h2:after {
+    content: " ";
+    display: block;
+    height: 2px;
+    background-color: #ff0044;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.contact-form {
+    padding: 25px 0px 0px 0px;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 90%;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    font-size: 85%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type=checkbox] {
+    margin: 15px 5px 15px 0;
+}
+
+.contact-form p {
+    font-size: 85%;
+    display: inline-block;
+}
+
+*:focus {
+    outline: none;
+}
+
+input[type=submit] {
+    border-radius: 200px;
+}
+
+
+
+/* <! ---------------------------------------->
+   <!--                 FOOTER              -->
+   <!-----------------------------------------> */
+
+footer {
+    background-color: #2a3a3f;
+    padding: 8px 2px;
+}
+
+.footer-img {
+    height: 60px;
+    width: auto;
+    display: block;
+    margin: auto;
+}
+
+footer p {
+    text-align: center;
+    padding: 20px 0 0 0;
+    color: #ccc;
+    font-size: 80%;
+}
+
+
+
+.social-links {
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    list-style: none;
+    float: middle;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.social-links li:last-child {
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #ff0044;
+    transition: color 0.3s;
+}
+
+.social-links li a:hover,
+.social-links li a:active {
+    color: #ff5582;
+}
