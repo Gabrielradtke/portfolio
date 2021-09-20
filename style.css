@@ -18,6 +18,9 @@ html {
     margin: 0 auto 0 auto;
 }
 
+.row .logo-text img{
+    width: 60%;
+}
 
 section {
     padding: 140rem;
