@@ -13,7 +13,7 @@
       <div class="coluna-esquerda">
         <img class="fotogabriel" alt="Foto de Gabriel" src="/imagens/logo.png">
         <div class="icons-Wrapper">
-          <img class="modo-cor" alt="modo de cor" src="/imagens/icon_sun.png">
+          <img class="modo-cor" alt="modo de cor" src="/imagens/icons/teste.png">
           <img class="modo-idioma" alt="modo de idioma" src="/imagens/pt-br.png">
         </div>
       </div>
@@ -33,25 +33,52 @@
         </a>
       </div>
     </section>
+
+    <section class="projetos">
+      <h1 class="titulo-projetos">PROJETOS</h1>
+      <div class="container-projetos">
+        <a href="https://github.com/Gabrielradtke">
+          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/icons/cavalo.png">
+          <h3>Inter. entre partos</h3>
+          <p>Em desenvolvimento</p>
+        </a>
+        <a href="https://github.com/Gabrielradtke">
+          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/icons/cavalo.png">
+          <h3>Inter. entre partos</h3>
+          <p>Em desenvolvimento</p>
+        </a>
+        <a href="https://github.com/Gabrielradtke">
+          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/icons/cavalo.png">
+          <h3>Inter. entre partos</h3>
+          <p>Em desenvolvimento</p>
+        </a>
+        <a href="https://github.com/Gabrielradtke">
+          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/icons/cavalo.png">
+          <h3>Inter. entre partos</h3>
+          <p>Em desenvolvimento</p>
+        </a>
+      </div>
+    </section>
   </div>
 
   <script>
-      const idiomaBtn = document.querySelector('.modo-idioma');
-  let idiomaAtual = 'pt';
+    const idiomaBtn = document.querySelector('.modo-idioma');
+    const modoCorBtn = document.querySelector('.modo-cor');
+    let idiomaAtual = 'pt';
+    let modoEscuroAtivo = false;
 
-  idiomaBtn.addEventListener('click', () => {
-    idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
-
-    // Alterna imagem da bandeira
-    idiomaBtn.src = idiomaAtual === 'pt' ? '/imagens/pt-br.png' : '/imagens/en-us.png';
-
-    // Atualiza todos os textos com base nos atributos data-*
-    document.querySelectorAll('[data-pt]').forEach(element => {
-      element.textContent = element.getAttribute(`data-${idiomaAtual}`);
+    idiomaBtn.addEventListener('click', () => {
+      idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
+      idiomaBtn.src = idiomaAtual === 'pt' ? '/imagens/pt-br.png' : '/imagens/en-us.png';
+      document.querySelectorAll('[data-pt]').forEach(element => {
+        element.textContent = element.getAttribute(`data-${idiomaAtual}`);
+      });
     });
-  });
-    document.querySelector('.modo-cor').addEventListener('click', () => {
+
+    modoCorBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
+      modoEscuroAtivo = !modoEscuroAtivo;
+      modoCorBtn.src = modoEscuroAtivo ? '/imagens/icons/teste.png' : '/imagens/icons/teste.png';
     });
   </script>
 </body>
