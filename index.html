@@ -13,17 +13,17 @@
       <div class="coluna-esquerda">
         <img class="fotogabriel" alt="Foto de Gabriel" src="/imagens/logo.png">
         <div class="icons-Wrapper">
-          <img class="modo-cor" alt="modo de cor" src="/imagens/icons/teste.png">
-          <img class="modo-idioma" alt="modo de idioma" src="/imagens/pt-br.png">
+          <img class="modo-cor" alt="modo de cor" src="/imagens/icons/moon.png">
+          <img class="modo-idioma" alt="modo de idioma" src="/imagens/icons/pt-br.png">
         </div>
       </div>
       <div class="coluna-direita">
         <h1 data-pt="Gabriel Radtke" data-en="Gabriel Radtke">Gabriel Radtke</h1>
         <h2 data-pt="Ciências da Computação" data-en="Computer Science">Ciências da Computação</h2>
         <div class="social-icons">
-          <a href="https://br.linkedin.com/in/gabrielradtke"><img class="icon" alt="linkedin" src="/imagens/icons8-linkedin-50.png"></a>
-          <a href="https://github.com/Gabrielradtke"><img class="icon" alt="github" src="/imagens/icons8-github-100.png"></a>
-          <a href="https://instagram.com/Gabrielradtke"><img class="icon" alt="instagram" src="/imagens/icons8-instagram-100.png"></a>
+          <a href="https://br.linkedin.com/in/gabrielradtke"><img class="icon" alt="linkedin" src="/imagens/icons/icons8-linkedin-50.png"></a>
+          <a href="https://github.com/Gabrielradtke"><img class="icon" alt="github" src="/imagens/icons/icons8-github-100.png"></a>
+          <a href="https://instagram.com/Gabrielradtke"><img class="icon" alt="instagram" src="/imagens/icons/icons8-instagram-100.png"></a>
         </div>
         <p class="descricao-abaixo-icon" data-pt="Paixão por desenvolver e programar" data-en="Passion for developing and programming">
           Paixão por desenvolver software modernos
@@ -57,6 +57,16 @@
           <h3>Inter. entre partos</h3>
           <p>Em desenvolvimento</p>
         </a>
+        <a href="https://github.com/Gabrielradtke">
+          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/icons/cavalo.png">
+          <h3>Inter. entre partos</h3>
+          <p>Em desenvolvimento</p>
+        </a>
+        <a href="https://github.com/Gabrielradtke">
+          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/icons/cavalo.png">
+          <h3>Inter. entre partos</h3>
+          <p>Em desenvolvimento</p>
+        </a>
       </div>
     </section>
   </div>
@@ -69,7 +79,7 @@
 
     idiomaBtn.addEventListener('click', () => {
       idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
-      idiomaBtn.src = idiomaAtual === 'pt' ? '/imagens/pt-br.png' : '/imagens/en-us.png';
+      idiomaBtn.src = idiomaAtual === 'pt' ? '/imagens/icons/pt-br.png' : '/imagens/icons/en-us.png';
       document.querySelectorAll('[data-pt]').forEach(element => {
         element.textContent = element.getAttribute(`data-${idiomaAtual}`);
       });
@@ -78,7 +88,7 @@
     modoCorBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       modoEscuroAtivo = !modoEscuroAtivo;
-      modoCorBtn.src = modoEscuroAtivo ? '/imagens/icons/teste.png' : '/imagens/icons/teste.png';
+      modoCorBtn.src = modoEscuroAtivo ? '/imagens/icons/sun.png' : '/imagens/icons/moon.png';
     });
   </script>
 </body>
