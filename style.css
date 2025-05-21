@@ -17,13 +17,13 @@ body {
 
 .top-info {
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 185px;
   display: flex;
   gap: 20px;
   font-size: 12px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #666;
+  color: black;
   text-transform: uppercase;
   letter-spacing: 1px;
   z-index: 1000;
@@ -31,7 +31,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   .top-info {
-    color: #aaa; /* ou #ccc para um tom mais claro */
+    color: black; /* ou #ccc para um tom mais claro */
   }
 }
 
