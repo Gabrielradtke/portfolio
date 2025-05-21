@@ -15,6 +15,35 @@ body {
   width: 100%; /* Ocupa toda a largura da tela */
 }
 
+.top-info {
+  position: absolute;
+  top: 30px;
+  right: 180px;
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  /* z-index: 1000; */
+}
+
+@media (max-width: 768px) {
+  .top-info {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .top-info {
+    display: none;  /* Oculta em telas pequenas */
+  }
+}
+
+
 .container-principal {
   display: flex; /* Layout em linha (horizontal) */
   flex-direction: row; /* Direção das colunas */
@@ -53,7 +82,7 @@ body {
   right: 0px; /* Encostado à direita */
   display: flex;
   flex-direction: column; /* Um ícone abaixo do outro */
-  gap: 135px; /* Distância entre ícones */
+  gap: 140px; /* Distância entre ícones */
 }
 
 .modo-cor,
@@ -72,7 +101,7 @@ body {
   flex: 2; /* Ocupa mais espaço */
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espaço entre os elementos de texto */
+  gap: 10px; /* Espaço entre os elementos de texto */
   text-align: right;
   justify-content: center;
   min-width: 280px;
@@ -176,6 +205,7 @@ button:hover {
   gap: 30px;
   width: 100%;
   max-width: 1100px;
+  /* border: 2px solid red; */
 }
 
 .container-projetos a {

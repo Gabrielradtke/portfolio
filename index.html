@@ -9,6 +9,10 @@
 </head>
 <body>
   <div class="root-principal">
+    <div class="top-info">
+      <span class="location" id="user-location">Localizando...</span>
+      <span class="timezone" id="local-time">--:--</span>
+    </div>    
     <section class="container-principal">
       <div class="coluna-esquerda">
         <img class="fotogabriel" alt="Foto de Gabriel" src="/imagens/logo.png">
@@ -90,6 +94,45 @@
       modoEscuroAtivo = !modoEscuroAtivo;
       modoCorBtn.src = modoEscuroAtivo ? '/imagens/icons/sun.png' : '/imagens/icons/moon.png';
     });
+
+
+
+
+    function updateLocalTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    document.getElementById('local-time').textContent = `${hours}:${minutes}`;
+  }
+
+  updateLocalTime();
+  setInterval(updateLocalTime, 60000);
+
+  // Geolocalização
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      async function(position) {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        try {
+          const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
+          const data = await response.json();
+          const city = data.address.city || data.address.town || data.address.village || 'Cidade';
+          const country = data.address.country || 'País';
+          document.getElementById('user-location').textContent = `${city}, ${country}`;
+        } catch (error) {
+          document.getElementById('user-location').textContent = 'Localização indisponível';
+        }
+      },
+      function(error) {
+        document.getElementById('user-location').textContent = 'Permissão negada';
+      }
+    );
+  } else {
+    document.getElementById('user-location').textContent = 'Geolocalização não suportada';
+  }
+
   </script>
 </body>
 </html>
