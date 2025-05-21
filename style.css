@@ -236,6 +236,10 @@ button:hover {
   object-fit: contain; /* Mantém proporção da imagem */
 }
 
+a h4 {
+  padding: 10px;
+}
+
 /* Responsividade: telas até 1024px */
 @media (max-width: 1024px) {
   .container-principal {
