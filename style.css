@@ -240,6 +240,16 @@ a h4 {
   padding: 10px;
 }
 
+.icon-developer {
+  position: static; /* Remove posicionamento absoluto */
+  flex-direction: row; /* Ícones lado a lado */
+  justify-content: center;
+  margin-top: 10px;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s; /* Efeito de zoom suave no hover */
+}
+
 /* Responsividade: telas até 1024px */
 @media (max-width: 1024px) {
   .container-principal {
@@ -272,6 +282,8 @@ a h4 {
     margin-top: 20px;
   }
 }
+
+
 
 /* Responsividade: telas até 480px (celulares pequenos) */
 @media (max-width: 480px) {
