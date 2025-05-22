@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gabriel Radtke</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
@@ -44,37 +44,40 @@
           <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/projetos/intervalo.png">
           <h3>Inter. entre partos</h3>
           <p>Site feito de forma independente para auxiliar colaboradores da ABCCC a indicarem a data correta no intervalo entre partos conforme regulamento da entidade.</p>
+          <div class="tecnologias">
             <img class="icon-developer" alt="HTML" src="/imagens/icons/html-5.png">
-            <img class="icon-developer" alt="CSS" src="/imagens/iconS/css-3.png">
+            <img class="icon-developer" alt="CSS" src="/imagens/icons/css-3.png">
             <img class="icon-developer" alt="JS" src="/imagens/icons/js.png">
-          </a>
-            
-
+          </div>
+        </a>
         <a href="https://github.com/Gabrielradtke/beecrowd" target="_blank">
-          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/projetos/beecrowd.png">
+          <img class="imagem-projeto" alt="imagem beecrowd" src="/imagens/projetos/beecrowd.png">
           <h3>Exercícios Beecrowd</h3>
-          <p>Exercícios de lógica de programação utilizando a linguagem de programação Python. Exercícios de nível iniciante e intermediário</p>
-          <img class="icon-developer" alt="Python" src="/imagens/icons/python.png">
+          <p>Exercícios de lógica de programação utilizando a linguagem Python. Nível iniciante e intermediário.</p>
+          <div class="tecnologias">
+            <img class="icon-developer" alt="Python" src="/imagens/icons/python.png">
+          </div>
+        </a>
+        <!-- Projetos em desenvolvimento -->
+        <a href="https://github.com/Gabrielradtke" target="_blank">
+          <img class="imagem-projeto" alt="projeto" src="/imagens/projetos/intervalo.png">
+          <h3>Em desenvolvimento</h3>
+          <p>Projeto em fase de desenvolvimento.</p>
         </a>
         <a href="https://github.com/Gabrielradtke" target="_blank">
-          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/projetos/intervalo.png">
-          <h3>Inter. entre partos</h3>
-          <p>Em desenvolvimento</p>
+          <img class="imagem-projeto" alt="projeto" src="/imagens/projetos/intervalo.png">
+          <h3>Em desenvolvimento</h3>
+          <p>Projeto em fase de desenvolvimento.</p>
         </a>
         <a href="https://github.com/Gabrielradtke" target="_blank">
-          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/projetos/intervalo.png">
-          <h3>Inter. entre partos</h3>
-          <p>Em desenvolvimento</p>
+          <img class="imagem-projeto" alt="projeto" src="/imagens/projetos/intervalo.png">
+          <h3>Em desenvolvimento</h3>
+          <p>Projeto em fase de desenvolvimento.</p>
         </a>
         <a href="https://github.com/Gabrielradtke" target="_blank">
-          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/projetos/intervalo.png">
-          <h3>Inter. entre partos</h3>
-          <p>Em desenvolvimento</p>
-        </a>
-        <a href="https://github.com/Gabrielradtke" target="_blank">
-          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/projetos/intervalo.png">
-          <h3>Inter. entre partos</h3>
-          <p>Em desenvolvimento</p>
+          <img class="imagem-projeto" alt="projeto" src="/imagens/projetos/intervalo.png">
+          <h3>Em desenvolvimento</h3>
+          <p>Projeto em fase de desenvolvimento.</p>
         </a>
       </div>
     </section>
@@ -100,44 +103,39 @@
       modoCorBtn.src = modoEscuroAtivo ? '/imagens/icons/sun.png' : '/imagens/icons/moon.png';
     });
 
-
-
-
     function updateLocalTime() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    document.getElementById('local-time').textContent = `${hours}:${minutes}`;
-  }
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('local-time').textContent = `${hours}:${minutes}`;
+    }
 
-  updateLocalTime();
-  setInterval(updateLocalTime, 60000);
+    updateLocalTime();
+    setInterval(updateLocalTime, 60000);
 
-  // Geolocalização
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      async function(position) {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-
-        try {
-          const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
-          const data = await response.json();
-          const city = data.address.city || data.address.town || data.address.village || 'Cidade';
-          const country = data.address.country || 'País';
-          document.getElementById('user-location').textContent = `${city}, ${country}`;
-        } catch (error) {
-          document.getElementById('user-location').textContent = 'Localização indisponível';
+    // Geolocalização
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async function(position) {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          try {
+            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
+            const data = await response.json();
+            const city = data.address.city || data.address.town || data.address.village || 'Cidade';
+            const country = data.address.country || 'País';
+            document.getElementById('user-location').textContent = `${city}, ${country}`;
+          } catch (error) {
+            document.getElementById('user-location').textContent = 'Localização indisponível';
+          }
+        },
+        function(error) {
+          document.getElementById('user-location').textContent = 'Permissão negada';
         }
-      },
-      function(error) {
-        document.getElementById('user-location').textContent = 'Permissão negada';
-      }
-    );
-  } else {
-    document.getElementById('user-location').textContent = 'Geolocalização não suportada';
-  }
-
+      );
+    } else {
+      document.getElementById('user-location').textContent = 'Geolocalização não suportada';
+    }
   </script>
 </body>
 </html>

@@ -5,10 +5,14 @@
 }
 
 body {
-  font-family: 'Rubik', sans-serif; /* Define a fonte principal */
-  background-color: #fff; /* Fundo branco */
-  color: #111; /* Texto preto */
-  scroll-behavior: smooth; /* Rolagem suave para âncoras */
+    scroll-behavior: smooth; /* Rolagem suave para âncoras */
+    font-family: 'Rubik', sans-serif;
+    background-size: cover; /* Garante que a imagem cubra todo o fundo */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa ao rolar */
+    color: #111;
+    scroll-behavior: smooth;
 }
 
 .root-principal {
@@ -64,6 +68,17 @@ body {
   border: 3px solid rgba(0, 0, 0, 0.1); /* Borda bem sutil */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Sombra discreta */
   border-radius: 16px; /* Cantos arredondados */
+  position: relative;
+  border: 3px solid transparent;
+  border-radius: 16px;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image: 
+    linear-gradient(white, white), /* fundo interno claro */
+    linear-gradient(270deg, black, gray, white, gray, black); /* gradiente invertido */
+  background-size: 400% 400%;
+  animation: borderAnimation 8s ease infinite;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Coluna da imagem */
@@ -170,9 +185,21 @@ button:hover {
 }
 
 .dark-mode .container-principal{
-  border: 2px solid rgba(255, 255, 255, 0.1); /* Borda branca bem sutil */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05); /* Sombra branca discreta */
-  border-radius: 16px; /* Cantos arredondados */
+  position: relative;
+  border: 3px solid transparent;
+  border-radius: 16px;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image: 
+    linear-gradient(#121212, #121212), /* fundo interno fixo */
+    linear-gradient(270deg, white, gray, black, gray, white); /* gradiente forte */
+  background-size: 400% 400%;
+  animation: borderAnimation 8s ease infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08); /* sombra levemente mais forte */  
+}
+
+.dark-mode .top-info {
+  color: white;
 }
 
 .dark-mode .coluna-direita h2,
@@ -320,5 +347,17 @@ a h4 {
 
   .container-principal {
     padding: 40px 10px;
+  }
+}
+
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 20%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 20%;
   }
 }
