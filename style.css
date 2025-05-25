@@ -278,22 +278,6 @@ button:hover {
     }
   }
 
-  @media (max-width: 768px) {
-    .top-info {
-      display: none;
-    }
-  }
-
-
-
-
-  @media (max-width: 768px) {
-    .top-info {
-      display: none;
-      /* Oculta em telas pequenas */
-    }
-  }
-
 
   .container-principal {
     display: flex;

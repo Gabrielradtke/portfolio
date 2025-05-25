@@ -129,8 +129,11 @@
           try {
             const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
             const data = await response.json();
-            const city = data.address.city || data.address.town || data.address.village || 'Cidade';
-            const country = data.address.country || 'País';
+            const address = data.address || {};
+            const city = address.city || address.town || address.village || address.hamlet || address.state || 'Local';
+            const country = address.country || 'Desconhecido';
+            document.getElementById('user-location').textContent = `${city}, ${country}`;
+
             // Buscar temperatura atual
             try {
               const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
