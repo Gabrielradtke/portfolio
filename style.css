@@ -227,11 +227,6 @@ button:hover {
   /* Cor mais escura no hover */
 }
 
-.menu-button {
-  border: 3px solid red;
-
-}
-
 /* MENU HORIZONTAL DENTRO DO CONTAINER */
 .menu-horizontal {
   width: 100%;
