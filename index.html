@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,14 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="root-principal">
     <div class="top-info">
       <span class="location" id="user-location">Localizando...</span>
       <span class="timezone" id="local-time">--:--</span>
-    </div>    
+      <span class="temperature" id="local-temp">--°C</span>
+    </div>
     <section class="container-principal">
       <div class="coluna-esquerda">
         <img class="fotogabriel" alt="Foto de Gabriel" src="/imagens/logo.png">
@@ -25,9 +28,12 @@
         <h1 data-pt="Gabriel Radtke" data-en="Gabriel Radtke">Gabriel Radtke</h1>
         <h2 data-pt="Ciências da Computação" data-en="Computer Science">Bacharelado Ciências da Computação</h2>
         <div class="social-icons">
-          <a href="https://br.linkedin.com/in/gabrielradtke"><img class="icon" alt="linkedin" src="/imagens/icons/linkedin.logo.png"></a>
-          <a href="https://github.com/Gabrielradtke"><img class="icon" alt="github" src="/imagens/icons/github.logo.png"></a>
-          <a href="https://instagram.com/Gabrielradtke"><img class="icon" alt="instagram" src="/imagens/icons/instagram.logo.png"></a>
+          <a href="https://br.linkedin.com/in/gabrielradtke"><img class="icon" alt="linkedin"
+              src="/imagens/icons/linkedin.logo.png"></a>
+          <a href="https://github.com/Gabrielradtke"><img class="icon" alt="github"
+              src="/imagens/icons/github.logo.png"></a>
+          <a href="https://instagram.com/Gabrielradtke"><img class="icon" alt="instagram"
+              src="/imagens/icons/instagram.logo.png"></a>
         </div>
         <p class="descricao-abaixo-icon" data-pt="Programar. Resolver. Evoluir." data-en="Code. Solve. Evolve.">
           Programar. Resolver. Evoluir.
@@ -43,7 +49,8 @@
         <a href="https://intervaloentrepartos.netlify.app/" target="_blank">
           <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/projetos/intervalo.png">
           <h3>Inter. entre partos</h3>
-          <p>Site feito de forma independente para auxiliar colaboradores da ABCCC a indicarem a data correta no intervalo entre partos conforme regulamento da entidade.</p>
+          <p>Site feito de forma independente para auxiliar colaboradores da ABCCC a indicarem a data correta no
+            intervalo entre partos conforme regulamento da entidade.</p>
           <div class="tecnologias">
             <img class="icon-developer" alt="HTML" src="/imagens/icons/html-5.png">
             <img class="icon-developer" alt="CSS" src="/imagens/icons/css-3.png">
@@ -116,7 +123,7 @@
     // Geolocalização
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        async function(position) {
+        async function (position) {
           const lat = position.coords.latitude;
           const lon = position.coords.longitude;
           try {
@@ -124,12 +131,21 @@
             const data = await response.json();
             const city = data.address.city || data.address.town || data.address.village || 'Cidade';
             const country = data.address.country || 'País';
-            document.getElementById('user-location').textContent = `${city}, ${country}`;
+            // Buscar temperatura atual
+            try {
+              const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
+              const weatherData = await weatherRes.json();
+              const temperature = weatherData.current_weather.temperature;
+              document.getElementById('local-temp').textContent = `${temperature} °C`;
+            } catch (weatherError) {
+              document.getElementById('local-temp').textContent = 'Temp. indisponível';
+            }
+
           } catch (error) {
             document.getElementById('user-location').textContent = 'Localização indisponível';
           }
         },
-        function(error) {
+        function (error) {
           document.getElementById('user-location').textContent = 'Permissão negada';
         }
       );
@@ -138,4 +154,5 @@
     }
   </script>
 </body>
+
 </html>
