@@ -274,6 +274,19 @@ a h4 {
 
 /* Responsivo para tablets */
 @media (max-width: 1024px) {
+  .top-info{ 
+  position: absolute;
+  top: 40px;
+  right: 100px;
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1000;
+}
   .container-principal {
     padding: 60px 20px;
     margin: 5vh 5vw;
@@ -290,6 +303,13 @@ a h4 {
   .coluna-direita {
     align-items: center;
     text-align: center;
+  }
+
+  .coluna-esquerda{
+    align-items: center;
+    text-align: center;
+    right: 100px;
+    display: inline;
   }
 
   .social-icons {
@@ -316,13 +336,18 @@ a h4 {
   }
 
   .fotogabriel {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
   }
 
   .icon {
     width: 32px;
     height: 32px;
+  }
+
+  .coluna-esquerda{
+    right: 100px;
+    display: inline;
   }
 
   button {
