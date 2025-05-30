@@ -78,7 +78,8 @@ main {
     linear-gradient(270deg, black, gray, white, gray, black);
   background-size: 400% 400%;
   animation: borderAnimation 8s ease infinite;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.08); */
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Coluna da imagem */
