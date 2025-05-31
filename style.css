@@ -382,11 +382,15 @@ a h4 {
     margin-top: 20px;
   }
 
+.projetos {
+  height: auto;
+  align-items: center;
+}
 .container-projetos{
     width: auto;
-    padding: 40px;
-    margin: 20px;
-    display: block;
+    padding: 10px;
+    /* margin: 10px; */
+    /* display: block; */
     flex-direction:column;
     justify-content: flex-start;
     align-items: center;
@@ -394,13 +398,17 @@ a h4 {
   }
   .container-projetos a{
     border: none;
+    width: 200px;
     align-items: center;
     text-align: center;
+    height: auto;
   }
 
-  footer p{
-    color:transparent;
+  .container-projetos a .imagem-projeto {
+    align-items: center;
+    justify-content: center;
   }
+
 }
 
 /* Modo escuro geral */
