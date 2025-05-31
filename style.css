@@ -334,10 +334,10 @@ a h4 {
   .top-info {
     position: absolute;
     top: 40px;
-    right: 90px;
+    right: 80px;
     display: flex;
     gap: 10px;
-    font-size: 14px;
+    font-size: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     text-transform: uppercase;
