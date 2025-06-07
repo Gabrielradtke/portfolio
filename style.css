@@ -22,7 +22,9 @@ body {
 
 /* Garante que o conteúdo principal cresça para ocupar espaço */
 main {
-  flex: 1;
+  background-image: url(/imagens/pexels-steve-1843717.jpg);
+  flex: -1;
+
 }
 
 .root-principal {
@@ -407,6 +409,7 @@ a h4 {
   .container-projetos a .imagem-projeto {
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
   }
 
 }

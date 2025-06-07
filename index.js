@@ -3,20 +3,39 @@ const modoCorBtn = document.querySelector('.modo-cor');
 let idiomaAtual = 'pt';
 let modoEscuroAtivo = false;
 
+// Lista dos idiomas disponíveis
+const idiomas = ['pt', 'en', 'es'];
+let idiomaIndex = 0;
+
+// Alternância de idioma ao clicar
 idiomaBtn.addEventListener('click', () => {
-  idiomaAtual = idiomaAtual === 'pt' ? 'en' : 'pt';
-  idiomaBtn.src = idiomaAtual === 'pt' ? '/imagens/icons/pt-br.png' : '/imagens/icons/en-us.png';
+  // Avança para o próximo idioma no array
+  idiomaIndex = (idiomaIndex + 1) % idiomas.length;
+  idiomaAtual = idiomas[idiomaIndex];
+
+  // Atualiza o ícone de bandeira
+  if (idiomaAtual === 'pt') {
+    idiomaBtn.src = '/imagens/icons/pt-br.png';
+  } else if (idiomaAtual === 'en') {
+    idiomaBtn.src = '/imagens/icons/en-us.png';
+  } else if (idiomaAtual === 'es') {
+    idiomaBtn.src = '/imagens/icons/es.png';
+  }
+
+  // Atualiza os textos com base no idioma
   document.querySelectorAll('[data-pt]').forEach(element => {
     element.textContent = element.getAttribute(`data-${idiomaAtual}`);
   });
 });
 
+// Alternância do modo claro/escuro
 modoCorBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   modoEscuroAtivo = !modoEscuroAtivo;
   modoCorBtn.src = modoEscuroAtivo ? '/imagens/icons/sun.png' : '/imagens/icons/moon.png';
 });
 
+// Atualiza a hora local
 function updateLocalTime() {
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, '0');
