@@ -22,7 +22,7 @@ body {
 
 /* Garante que o conteúdo principal cresça para ocupar espaço */
 main {
-  background-image: url(/imagens/pexels-steve-1843717.jpg);
+  /* background-image: url(/imagens/pexels-steve-1843717.jpg); */
   flex: -1;
 
 }
@@ -252,10 +252,11 @@ button:hover {
 }
 
 .container-projetos img.imagem-projeto {
-  width: 100%;
   height: auto;
-  max-height: 150px;
+  max-height: 200px;
   object-fit: contain;
+  width: 200px;
+  height: 200px;
 }
 
 a h4 {
