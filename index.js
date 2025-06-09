@@ -62,9 +62,11 @@ if (navigator.geolocation) {
 
         // Buscar temperatura atual
         try {
-          const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
+          const apiKey = '103928e5fed64635bbf212552250906';
+          const weatherRes = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&lang=${idiomaAtual}`);
           const weatherData = await weatherRes.json();
-          const temperature = weatherData.current_weather.temperature;
+          const temperature = weatherData.current.temp_c;
+          document.getElementById('local-temp').textContent = `${temperature} °C`;
           document.getElementById('local-temp').textContent = `${temperature} °C`;
         } catch (weatherError) {
           document.getElementById('local-temp').textContent = 'Temp. indisponível';
