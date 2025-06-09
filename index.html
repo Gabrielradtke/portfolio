@@ -1,81 +1,167 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gabriel Radtke</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gabriel Radtke</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <main>
-  <div class="root-principal">
-    <div class="top-info">
-      <span class="location" id="user-location">Localizando...</span>
-      <span class="timezone" id="local-time">--:--</span>
-      <span class="temperature" id="local-temp">--°C</span>
-    </div>
-    <section class="container-principal">
-      <div class="coluna-esquerda">
-        <img class="fotogabriel" alt="Foto de Gabriel" src="/imagens/logo.png">
-        <div class="icons-Wrapper">
-          <img class="modo-cor" alt="modo de cor" src="/imagens/icons/moon.png">
-          <img class="modo-idioma" alt="modo de idioma" src="/imagens/icons/pt-br.png">
+  <body>
+    <main>
+      <div class="root-principal">
+        <div class="top-info">
+          <span class="location" id="user-location">Localizando...</span>
+          <span class="timezone" id="local-time">--:--</span>
+          <span class="temperature" id="local-temp">--°C</span>
         </div>
-      </div>
-      <div class="coluna-direita">
-        <h1>Gabriel Radtke</h1>
-        <h2 data-pt="Ciências da Computação" data-en="Computer Science" data-es="Ciencias de la Computación">Ciências da Computação</h2>
-        <div class="social-icons">
-          <a href="https://br.linkedin.com/in/gabrielradtke"><img class="icon" alt="linkedin"
-              src="/imagens/icons/linkedin.logo.png"></a>
-          <a href="https://github.com/Gabrielradtke"><img class="icon" alt="github"
-              src="/imagens/icons/github.logo.png"></a>
-          <a href="https://instagram.com/Gabrielradtke"><img class="icon" alt="instagram"
-              src="/imagens/icons/instagram.logo.png"></a>
-        </div>
-        <p class="descricao-abaixo-icon" data-pt="Programar. Resolver. Evoluir." data-en="Code. Solve. Evolve." data-es="
-        Programa. Resolver. Evolucionar.">
-          Programar. Resolver. Evoluir.
-        </p>
-        <a href="#home" download>
-          <button class="hover">Download CV</button>
-        </a>
-      </div>
-    </section>
-    <section class="projetos">
-      <h1 class="titulo-projetos">PROJETOS</h1>
-      <div class="container-projetos">
-        <a href="https://intervaloentrepartos.netlify.app/" target="_blank">
-          <img class="imagem-projeto" alt="imagem cavalo" src="/imagens/projetos/intervalo.png">
-          <h3>Inter. entre partos</h3>
-          <p>Site feito de forma independente para auxiliar colaboradores da ABCCC a indicarem a data correta no
-            intervalo entre partos conforme regulamento da entidade.</p>
-          <div class="tecnologias">
-            <img class="icon-developer" alt="HTML" src="/imagens/icons/html-5.png">
-            <img class="icon-developer" alt="CSS" src="/imagens/icons/css-3.png">
-            <img class="icon-developer" alt="JS" src="/imagens/icons/js.png">
+        <section class="container-principal">
+          <div class="coluna-esquerda">
+            <img
+              class="fotogabriel"
+              alt="Foto de Gabriel"
+              src="/imagens/logo.png"
+            />
+            <div class="icons-Wrapper">
+              <img
+                class="modo-cor"
+                alt="modo de cor"
+                src="/imagens/icons/moon.png"
+              />
+              <img
+                class="modo-idioma"
+                alt="modo de idioma"
+                src="/imagens/icons/pt-br.png"
+              />
+            </div>
           </div>
-        </a>
-        <a href="https://github.com/Gabrielradtke/beecrowd" target="_blank">
-          <img class="imagem-projeto" alt="imagem beecrowd" src="/imagens/projetos/beecrowd.png">
-          <h3>Exercícios Beecrowd</h3>
-          <p>Exercícios de lógica de programação utilizando a linguagem Python. Nível iniciante e intermediário.</p>
-          <div class="tecnologias">
-            <img class="icon-developer" alt="Python" src="/imagens/icons/python.png">
+          <div class="coluna-direita">
+            <h1>Gabriel Radtke</h1>
+            <h2
+              data-pt="Ciências da Computação"
+              data-en="Computer Science"
+              data-es="Ciencias de la Computación"
+            >
+              Ciências da Computação
+            </h2>
+            <div class="social-icons">
+              <a href="https://br.linkedin.com/in/gabrielradtke"
+                ><img
+                  class="icon"
+                  alt="linkedin"
+                  src="/imagens/icons/linkedin.logo.png"
+              /></a>
+              <a href="https://github.com/Gabrielradtke"
+                ><img
+                  class="icon"
+                  alt="github"
+                  src="/imagens/icons/github.logo.png"
+              /></a>
+              <a href="https://instagram.com/Gabrielradtke"
+                ><img
+                  class="icon"
+                  alt="instagram"
+                  src="/imagens/icons/instagram.logo.png"
+              /></a>
+            </div>
+            <p
+              class="descricao-abaixo-icon"
+              data-pt="Programar. Resolver. Evoluir."
+              data-en="Code. Solve. Evolve."
+              data-es="
+        Programa. Resolver. Evolucionar."
+            >
+              Programar. Resolver. Evoluir.
+            </p>
+            <a href="#home" download>
+              <button class="hover">Download CV</button>
+            </a>
           </div>
-        </a>
+        </section>
+        <section class="projetos">
+          <h1 data-pt="Projetos" data-en="Projects" data-es="Proyectos" class="titulo-projetos">PROJETOS</h1>
+          <div class="container-projetos">
+            <a href="https://intervaloentrepartos.netlify.app/" target="_blank">
+              <img
+                class="imagem-projeto"
+                alt="imagem cavalo"
+                src="/imagens/projetos/intervalo.png"
+              />
+              <h3
+                data-pt="Inter. entre partos"
+                data-en="Interval between births"
+                data-es="Inter. entre nacimientos"
+              >
+                Inter. entre partos
+              </h3>
+              <p
+                data-pt="Site feito de forma independente para auxiliar colaboradores da ABCCC a indicarem a data correta no intervalo entre partos conforme regulamento da entidade."
+                data-en="Website created independently to help ABCCC employees indicate the correct date in the interval between births, as per the entity's regulations."
+                data-es="Sitio web creado de forma independiente para ayudar a los empleados de ABCCC a indicar la fecha correcta en el intervalo entre nacimientos, según la normativa de la entidad."
+              >
+                Site feito de forma independente para auxiliar colaboradores da
+                ABCCC a indicarem a data correta no intervalo entre partos
+                conforme regulamento da entidade.
+              </p>
+              <div class="tecnologias">
+                <img
+                  class="icon-developer"
+                  alt="HTML"
+                  src="/imagens/icons/html-5.png"
+                />
+                <img
+                  class="icon-developer"
+                  alt="CSS"
+                  src="/imagens/icons/css-3.png"
+                />
+                <img
+                  class="icon-developer"
+                  alt="JS"
+                  src="/imagens/icons/js.png"
+                />
+              </div>
+            </a>
+            <a href="https://github.com/Gabrielradtke/beecrowd" target="_blank">
+              <img
+                class="imagem-projeto"
+                alt="imagem beecrowd"
+                src="/imagens/projetos/beecrowd.png"
+              />
+              <h3
+                data-pt="Exercícios Beecrowd"
+                data-en="Beecrowd Exercises"
+                data-es="Ejercicios de Beecrowd"
+              >
+                Exercícios Beecrowd
+              </h3>
+              <p
+                data-pt="Exercícios de lógica de programação utilizando a linguagem
+              Python. Nível iniciante e intermediário."
+                data-en="Programming logic exercises using the Python language. Beginner and intermediate level."
+                data-es="Ejercicios de lógica de programación con Python. Nivel principiante e intermedio."
+              >
+                Exercícios de lógica de programação utilizando a linguagem
+                Python. Nível iniciante e intermediário.
+              </p>
+              <div class="tecnologias">
+                <img
+                  class="icon-developer"
+                  alt="Python"
+                  src="/imagens/icons/python.png"
+                />
+              </div>
+            </a>
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
-  <footer>
-    <p>Gabriel Radtke &copy; 2025</p>
-  </footer>
-  </main>
-  <script src="index.js"></script>
-</body>
-
+      <footer>
+        <p>Gabriel Radtke &copy; 2025</p>
+      </footer>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>
-
